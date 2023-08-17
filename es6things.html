@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>es6things</title>
+    </head>
+
+    <body>
+        <main>
+            <h1> The interesting things about es6</h1>
+            <p>For me, to understang why the es6 does things like this is a bit little difficult. So, I focus on how to
+                write code better with es6. Let me start!</p>
+            <h2>一：let and const </h2>
+            <p>The let command is used to declare variables. It is similar with var. But the variables decalared with
+                let is only effective in the code block. </p>
+            <h3>How to use</h3>
+            <pre style="background: #000">
+                {
+                    let a = 10;
+                    var b = 1;
+                }
+                
+                a // ReferenceError: a is not defined.
+                b // 1
+            </pre>
+            <h3>The best practice</h3>
+            <pre style="background: #000">
+                for (let i = 0; i < 10; i++) { //
+                ...
+                }
+            </pre>
+            <pre style="background: #000">
+                var a = [];
+                for (let i = 0; i < 10;i++) {
+                    a[i]=function(){
+                        console.log(i);
+                    };
+                }
+                a[6](); // 6
+            </pre>
+            <h3>The Warnings</h3>
+            <pre style="background: #000">
+                for (let i = 0; i < 3; i++) {
+                    let i="abc";
+                    console.log(i);
+                } //abc; //abc; //abc;
+            </pre>
+        </main>
+    </body>
+
+</html>
